@@ -7,10 +7,10 @@ const cors = require("cors");
 const port=process.env.PORT||8002
 const productRoutes = require("./api/products");
 app.use(express.json());
-// app.use(cors());
+app.use(cors());
 
 app.use(cors({
-  origin: ['*'],
+  origin: ['http://localhost:3000', 'https://webstore-frontend-9669.onrender.com'],
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
